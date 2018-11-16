@@ -1,401 +1,51 @@
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Lavender | Knox Corp.</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="canonical" href="https://lavender.knoxcorp.me" />
+		<meta name="title" content="Lavender | Discord Moderation Bot" />
+		<meta name="referrer" content="always">
+		<meta name="description" content="The Official Site for the Discord Moderation Bot, Lavender" />
+		<meta property="og:title" content="Lavender | Discord Moderation Bot" />
+		<meta property="og:url" content="https://lavender.knoxcorp.me" />
+		<meta property="og:image" content="" />
+		<meta property="og:description" content="The Official Site for the Discord Moderation Bot, Lavender" />
+		<meta name="twitter:description" content="The Official Site for the Discord Moderation Bot, Lavender" />
+		<meta name="twitter:image:src"content="" />
+		<link rel="publisher" href="https://lavender.knoxcorp.me" />
+		<link rel="author" href="https://lavender.knoxcorp.me" />
+		<meta property="author" href="Knox, Corp." />
+		<meta property="og:type" content="site" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="og:site_name" content="Lavender | Discord Moderation Bot" />
+		<meta name="robots" content="indedx, follow" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="app-touch-icon" href="favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
+		<meta name="apple-mobile-web-app=-title" content="Lavender" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
 
-<head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css" />
-    <link href="https://fonts.googleapis.com/css?family=Electrolize" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<style>
-    .block {
-        background-color: rgb(54, 75, 113);
-        height: 400px;
-        text-align: center;
-        vertical-align: middle;
-        display: flex;
-        flex-direction: column;
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 100%;
-        justify-content: center; /* vertically aligns items */
-        align-items: center; /* horizontally aligns items */
-    }
-        .block.blue {
-            background-color: rgb(54, 75, 113);
-        }
-        .block.purple {
-            background-color: #3f3671;
-        }
-        .block.teal {
-            background-color: #366971;
-        }
-        .block.imgBackground {
-        }
-    .break {
-        margin-left: -100%;
-        margin-right: -100%;
-    }
-    .block.small {
-        height: 200px;
-    }
-    .block.med {
-        height: 500px;
-    }
-    .block.large {
-        height: 700px;
-    }
-    .alert-box {
-        margin: 10px 0;
-        padding: 10px;
-        border-radius: 5px;
-        min-height: 40px;
-        font-size: 14px;
-        font-weight: 300;
-        line-height: 22px;
-    }
-        .alert-box > i {
-            float: left;
-        }
-    .embed {
-        background-color: rgb(42, 45, 50);
-        border-radius: 5px;
-        border-color: rgba(0,0,0,.1);
-        box-shadow: 3px 3px 1px #888888;
-        border-width: 2px;
-        border-style: solid;
-        color: white;
-        padding: 10px;
-        font-size: 14px;
-    }
-        .embed.image {
-            position: absolute;
-            left: 0px;
-            right: 5px;
-            top: 0px;
-            bottom: 0px;
-        }
-        .embed.title {
-            color: white;
-            font-size: 16px;
-        }
-    .alert-box.std {
-        color: black;
-    }
-    .alert-box span {
-        color: rgb(35, 35, 35);
-        margin: 0 !important;
-    }
-    .alert-box.success {
-        background: rgba(67,181,129,.45);
-        border-left: 4px solid rgba(67,181,129,.95);
-    }
-    .alert-box.info {
-        background: rgba(17,138,178,0.45);
-        border-left: 4px solid rgba(17,138,178,0.95);
-    }
-    .alert-box.warn {
-        background: rgba(255,209,102,.45);
-        border-left: 4px solid rgba(255,209,102,.95);
-    }
-    .alert-box.danger {
-        background: rgba(239,71,111,.45);
-        border-left: 4px solid rgba(239,71,111,.95);
-    }
-    @-webkit-keyframes backgroundScroll {
-        from {
-            background-position: 0 0;
-        }
-        to {
-            background-position: 0 100000px;
-        }
-    }
-    @keyframes backgroundScroll {
-        from {
-            background-position: 0 0;
-        }
-        to {
-            background-position: 0 100000px;
-        }
-    }
-    .hidden.menu {
-        display: none;
-    }
-    .masthead.segment {
-        min-height: 450px;
-        padding: 1em 0em;
-    }
-    .masthead .logo.item img {
-        margin-right: 1em;
-    }
-    .masthead .ui.menu .ui.button {
-        margin-left: 0.5em;
-    }
-    .masthead h1.ui.header {
-        margin-top: 1em;
-        margin-bottom: 0em;
-        font-size: 4em;
-        font-weight: normal;
-    }
-    .masthead h2 {
-        font-size: 1.7em;
-        font-weight: normal;
-    }
-    .ui.vertical.stripe {
-        padding: 8em 0em;
-    }
-        .ui.vertical.stripe h3 {
-            font-size: 2em;
-        }
-        .ui.vertical.stripe .button + h3,
-        .ui.vertical.stripe p + h3 {
-            margin-top: 3em;
-        }
-        .ui.vertical.stripe .floated.image {
-            clear: both;
-        }
-        .ui.vertical.stripe p {
-            font-size: 1.33em;
-        }
-        .ui.vertical.stripe .horizontal.divider {
-            margin: 3em 0em;
-        }
-    .quote.stripe.segment {
-        padding: 0em;
-    }
-        .quote.stripe.segment .grid .column {
-            padding-top: 5em;
-            padding-bottom: 5em;
-        }
-    .footer.segment {
-        padding: 5em 0em;
-    }
-    .secondary.pointing.menu .toc.item {
-        display: none;
-    }
-    .divider-column {
-        position: relative;
-        padding: 0 !important;
-    }
-    @media only screen and (max-width: 700px) {
-        .ui.fixed.menu {
-            display: none !important;
-        }
-        .secondary.pointing.menu .item,
-        .secondary.pointing.menu .menu {
-            display: none;
-        }
-        .secondary.pointing.menu .toc.item {
-            display: block;
-        }
-        .masthead.segment {
-            min-height: 350px;
-        }
-        .masthead h1.ui.header {
-            font-size: 2em;
-            margin-top: 1.5em;
-        }
-        .masthead h2 {
-            margin-top: 0.5em;
-            font-size: 1.5em;
-        }
-    }
-    .overlay {
-        opacity: 0.9;
-        background-color: #808080;
-        position: fixed;
-        margin-left: auto;
-        margin-right: auto;
-        width: 100%;
-        height: 100%;
-        top: 0px;
-        left: 0px;
-        z-index: 1000;
-    }
-    .pixeled {
-        font-family: pixela;
-    }
-    .blured {
-        z-index: 1;
-        -webkit-filter: blur(10px);
-        filter: blur(10px);
-    }
-    .marker {
-        font-family: 'Permanent Marker', cursive;
-    }
-    .electro {
-        font-family: 'Electrolize', sans-serif;
-    }
-    .head {
-        background-size: cover;
-    }
-    .sunny-back {
-        background-image: url(https://raw.githubusercontent.com/cerudev/wb/master/img/sunset.jpeg);
-        background-position: bottom;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-    .rainy-back {
-        background-image: url(https://tallypress.com/wp-content/uploads/2017/05/635981751870849035-1234523254_rainyday.jpg);
-        background-position: bottom;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-    .tornado-back {
-        background: url(https://wallpaperscraft.com/image/tornado_lightning_category_field_bad_weather_constructions_wires_61189_1920x1080.jpg);
-        background-repeat: no-repeat;
-        background-position: bottom;
-        background-size: cover;
-    }
-    .test {
-        font-family: 'Caveat', cursive;
-    }
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<!-- Header -->
+					<header id="header" class="alt">
+						<span class="logo"><img src="images/logo.png" alt="" width="200" height="200"/></span>
+						<h1>Lavender</h1>
+						<p>A Fun, Customizable Discord Bot<br />
+						built by <a href="https://incrested.github.io">Incrested</a> and <a href="https://github.com/Ultra03">Ultra03</a>.</p>
+					</header>
 
-
-</head>
-
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-faded">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" href="index.html">
-            <img src="images/avatar.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
-            Spicy eGirl
-        </a>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="https://discordapp.com/oauth2/authorize?&client_id=343569690972389398&scope=bot&permissions=2146958583">Invite</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="commands.html">Commands</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="about.html">About<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="updates.html">Updates</a>
-                </li>
-  
-            </ul>
-
-        </div>
-    </nav>
-
-</style>
-<div class="head masthead center aligned segment" style="border-bottom:1px solid black;">
-    <div class="ui container" style="padding-top:16em">
-        <div class="ui two column center aligned grid">
-            <div class="column" style="text-align:center;border-right:2px solid black;">
-                <h1 class="test" style="font-size:6em;float:right;padding-top:0.2em;color:white">Weatherbot</h1>
-            </div>
-            <div class="column">
-                <img id="logo" class="ui small image" />
-            </div>
-        </div>
-    </div>
-</div>
-<div class="block" style="background:url(https://raw.githubusercontent.com/cerudev/wb/master/img/background.png);">
-    <div class="ui container">
-        <div class="ui equal width grid">
-            <div class="column">
-                <div class="ui container">
-                    <br />
-                    <h1 class="electro" style="color:white">Simple. Quick. Amazing.</h1>
-                    <div class="ui container" style="font-size:19px;">
-                        <p style="color:white">
-                            Finally a bot dedicated to weather! Weather is a bot that knows all sorts of information about weather! From active hurricanes, what hurricane means, low pressure systems, etc, this bot can do it! A LIVE weather API is coming soon. Meaning: You can look up a place and find real-time weather; Weather Forcasts and MORE!
-                            <br />
-                            <br />
-                           It can do things all by itself, so you don't have to!
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="column" style="position:relative">
-                <div class="discord-img" style="">
-                    <img src="https://raw.githubusercontent.com/cerudev/wb/master/img/example_1.gif" style="width:600px;height:400px;" />
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="ui segment container">
-    <div class="ui centered cards">
-        <div class="card">
-            <div class="image">
-                <img src="https://cdn.discordapp.com/attachments/307561774293581824/373085915587018752/unknown.png">
-            </div>
-            <div class="content">
-                <a class="header">Now</a>
-                <div class="meta">
-                    <span>w!now location</span>
-                </div>
-                <div class="description">
-                    <p></p>
-                </div>
-                <div class="extra">
-                    Grabs the most up to date weather for the location. Fairly fast but give it a few seconds to do cool things.<br />
-                    Can give weather anywhere on the earth, just be careful with a few places but it should work.
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="image">
-                <img src="https://cdn.discordapp.com/attachments/307561774293581824/373086563917365258/unknown.png">
-            </div>
-            <div class="content">
-                <a class="header">Everyday</a>
-                <div class="meta">
-                    <span>w!everyday locationName</span>
-                </div>
-                <div class="description">
-                    <p></p>
-                </div>
-                <div class="extra">
-                    Gets the weather 24 hours from when you set it. This means you can get the weather in the morning<br />
-                    and be ready to do whatever you want to do knowing weatherbot has your back.
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="ui container segment">
-    <h3>How to get started</h3>
-    <p>
-        <a href="https://discordapp.com/oauth2/authorize/?permissions=70274112&scope=bot&client_id=234458736016490498">Invite the bot with this link</a>
-    </p>
-</div>
-
- Website layout and makeout by stip. Copyright 2018©
-
-<script>
-    
-   
-    
- 
- 
-    
-    
-    
-    
-    $(document).ready(function () {
-        var back = [{
-            back: 'rainy-back',
-            logo: 'https://cdn.discordapp.com/attachments/269828039255392256/368841898888134656/391527.png'
-        },
-        {
-            back: 'sunny-back',
-            logo: 'https://cdn.discordapp.com/attachments/269828039255392256/368861094485164032/391518.png'
-        },
-        {
-            back: 'tornado-back',
-            logo: 'https://cdn.discordapp.com/attachments/269828039255392256/368863078458327041/391528.png'
-        }]
-        var style = back[Math.floor(Math.random() * back.length)];
-        $('.head').addClass(style['back']);
-        $('#logo').attr('src', style['logo']);
-    })
-</script>
+				<!-- Nav -->
+					<nav id="nav"
